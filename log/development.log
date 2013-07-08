@@ -10117,3 +10117,381 @@ DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a rel
   [1m[36mAd Load (0.5ms)[0m  [1mSELECT "ads".* FROM "ads"[0m
   Rendered ads/index.html.erb within layouts/ads (0.5ms)
 Completed 200 OK in 15ms (Views: 11.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-08 23:46:20 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (Migrations are pending; run 'rake db:migrate RAILS_ENV=development' to resolve this issue.):
+  activerecord (4.0.0) lib/active_record/migration.rb:379:in `check_pending!'
+  activerecord (4.0.0) lib/active_record/migration.rb:366:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__2113336139294974893__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DropProductsTable (20130704181431)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mDROP TABLE "ads"[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20130704181431"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAds (20130704181708)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "ads" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "price" decimal, "seller_id" integer, "email" varchar(255), "img_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20130704181708"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-08 23:46:42 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.0/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 51ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ads/" for 127.0.0.1 at 2013-07-08 23:47:02 +0800
+Processing by AdsController#index as HTML
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+  [1m[35mAd Load (0.1ms)[0m  SELECT "ads".* FROM "ads"
+  Rendered ads/index.html.erb within layouts/ads (0.9ms)
+Completed 200 OK in 45ms (Views: 41.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ads/" for 127.0.0.1 at 2013-07-08 23:47:04 +0800
+Processing by AdsController#index as HTML
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+  [1m[36mAd Load (0.3ms)[0m  [1mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/index.html.erb within layouts/ads (0.2ms)
+Completed 200 OK in 18ms (Views: 15.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ads/" for 127.0.0.1 at 2013-07-08 23:47:27 +0800
+Processing by AdsController#index as HTML
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+  [1m[35mAd Load (0.3ms)[0m  SELECT "ads".* FROM "ads"
+  Rendered ads/index.html.erb within layouts/ads (0.7ms)
+Completed 200 OK in 66ms (Views: 15.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/ads/1" for 127.0.0.1 at 2013-07-08 23:47:28 +0800
+Processing by AdsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAd Load (34.5ms)[0m  [1mSELECT "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered ads/show.html.erb within layouts/ads (1.6ms)
+Completed 200 OK in 52ms (Views: 14.8ms | ActiveRecord: 34.5ms)
+
+
+Started GET "/ads/3/edit" for 127.0.0.1 at 2013-07-08 23:47:31 +0800
+Processing by AdsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mAd Load (0.2ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered ads/edit.html.erb within layouts/ads (39.0ms)
+Completed 200 OK in 95ms (Views: 93.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/ads/3/update" for 127.0.0.1 at 2013-07-08 23:47:32 +0800
+Processing by AdsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mVFsW+RdTqoewsw2erDAytfoPtqlXcq5TjL4WDLQF+Q=", "ad"=>{"name"=>"Moosehead", "description"=>"Slightly moth-eaten. One of the antlers is broken and there's a strange buzzing sound behind the eyes...", "price"=>"2978.25", "seller_id"=>"56", "email"=>"kathy@hotmail.com", "img_url"=>"http://saloon.javaranch.com/ubb/moosefly.gif"}, "commit"=>"Update", "id"=>"3"}
+  [1m[36mAd Load (0.2ms)[0m  [1mSELECT "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/ads/3
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/ads/3" for 127.0.0.1 at 2013-07-08 23:47:32 +0800
+Processing by AdsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mAd Load (0.2ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered ads/show.html.erb within layouts/ads (0.5ms)
+Completed 200 OK in 25ms (Views: 21.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/ads/" for 127.0.0.1 at 2013-07-08 23:47:34 +0800
+Processing by AdsController#index as HTML
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+  [1m[36mAd Load (0.2ms)[0m  [1mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/index.html.erb within layouts/ads (0.4ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/ads/new" for 127.0.0.1 at 2013-07-08 23:47:37 +0800
+Processing by AdsController#new as HTML
+  Rendered ads/new.html.erb within layouts/ads (2.3ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/ads/create" for 127.0.0.1 at 2013-07-08 23:47:52 +0800
+Processing by AdsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mVFsW+RdTqoewsw2erDAytfoPtqlXcq5TjL4WDLQF+Q=", "ad"=>{"name"=>"cc", "description"=>"cc", "price"=>"cc", "seller_id"=>"cc", "email"=>"cc", "img_url"=>"cc"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (19.9ms)[0m  [1mINSERT INTO "ads" ("created_at", "description", "email", "img_url", "name", "price", "seller_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 08 Jul 2013 15:47:52 UTC +00:00], ["description", "cc"], ["email", "cc"], ["img_url", "cc"], ["name", "cc"], ["price", #<BigDecimal:7f92bbf70dc8,'0.0',9(9)>], ["seller_id", 0], ["updated_at", Mon, 08 Jul 2013 15:47:52 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/ads/38
+Completed 302 Found in 63ms (ActiveRecord: 21.8ms)
+
+
+Started GET "/ads/38" for 127.0.0.1 at 2013-07-08 23:47:52 +0800
+Processing by AdsController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mAd Load (0.3ms)[0m  [1mSELECT "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1[0m  [["id", "38"]]
+  Rendered ads/show.html.erb within layouts/ads (0.7ms)
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ads/cc" for 127.0.0.1 at 2013-07-08 23:47:52 +0800
+Processing by AdsController#show as */*
+  Parameters: {"id"=>"cc"}
+  [1m[35mAd Load (0.2ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1  [["id", "cc"]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Ad with id=cc):
+  app/controllers/ads_controller.rb:4:in `show'
+
+
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (33.0ms)
+
+
+Started GET "/ads/" for 127.0.0.1 at 2013-07-08 23:47:54 +0800
+Processing by AdsController#index as HTML
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+  [1m[36mAd Load (0.4ms)[0m  [1mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/index.html.erb within layouts/ads (0.4ms)
+Completed 200 OK in 25ms (Views: 21.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ads/1" for 127.0.0.1 at 2013-07-09 00:16:31 +0800
+Processing by AdsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAd Load (0.2ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered ads/show.html.erb within layouts/ads (0.6ms)
+Completed 200 OK in 66ms (Views: 40.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/ads/6" for 127.0.0.1 at 2013-07-09 00:16:36 +0800
+Processing by AdsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAd Load (0.3ms)[0m  [1mSELECT "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  Rendered ads/show.html.erb within layouts/ads (0.3ms)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ads/38" for 127.0.0.1 at 2013-07-09 00:16:42 +0800
+Processing by AdsController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[35mAd Load (0.2ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1  [["id", "38"]]
+  Rendered ads/show.html.erb within layouts/ads (0.2ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/ads/cc" for 127.0.0.1 at 2013-07-09 00:16:42 +0800
+Processing by AdsController#show as */*
+  Parameters: {"id"=>"cc"}
+  [1m[36mAd Load (0.2ms)[0m  [1mSELECT "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1[0m  [["id", "cc"]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Ad with id=cc):
+  app/controllers/ads_controller.rb:4:in `show'
+
+
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.0ms)
+
+
+Started GET "/ads/" for 127.0.0.1 at 2013-07-09 00:16:58 +0800
+Processing by AdsController#index as HTML
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+  [1m[35mAd Load (0.2ms)[0m  SELECT "ads".* FROM "ads"
+  Rendered ads/index.html.erb within layouts/ads (1.1ms)
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/ads/38/delete" for 127.0.0.1 at 2013-07-09 00:17:09 +0800
+
+ActionController::RoutingError (No route matches [GET] "/ads/38/delete"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (22.1ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (106.8ms)
+
+
+Started GET "/ads" for 127.0.0.1 at 2013-07-09 00:17:53 +0800
+Processing by AdsController#index as HTML
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+  [1m[36mAd Load (0.2ms)[0m  [1mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/index.html.erb within layouts/ads (0.7ms)
+Completed 200 OK in 79ms (Views: 9.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/ads/38/delete" for 127.0.0.1 at 2013-07-09 00:17:56 +0800
+Processing by AdsController#destroy as HTML
+  Parameters: {"id"=>"38"}
+Filter chain halted as :check_logged_in rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/ads/38/delete" for 127.0.0.1 at 2013-07-09 00:17:56 +0800
+Processing by AdsController#destroy as HTML
+  Parameters: {"id"=>"38"}
+  [1m[35mAd Load (0.7ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1  [["id", "38"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "ads" WHERE "ads"."id" = ?  [["id", 38]]
+  [1m[36m (35.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/ads/
+Completed 302 Found in 42ms (ActiveRecord: 37.1ms)
+
+
+Started GET "/ads/" for 127.0.0.1 at 2013-07-09 00:17:56 +0800
+Processing by AdsController#index as HTML
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+  [1m[35mAd Load (0.2ms)[0m  SELECT "ads".* FROM "ads"
+  Rendered ads/index.html.erb within layouts/ads (0.4ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/ads/37/delete" for 127.0.0.1 at 2013-07-09 00:17:58 +0800
+Processing by AdsController#destroy as HTML
+  Parameters: {"id"=>"37"}
+Filter chain halted as :check_logged_in rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/ads/37/delete" for 127.0.0.1 at 2013-07-09 00:17:58 +0800
+Processing by AdsController#destroy as HTML
+  Parameters: {"id"=>"37"}
+  [1m[36mAd Load (0.1ms)[0m  [1mSELECT "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1[0m  [["id", "37"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "ads" WHERE "ads"."id" = ?[0m  [["id", 37]]
+  [1m[35m (2.1ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/ads/
+Completed 302 Found in 5ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/ads/" for 127.0.0.1 at 2013-07-09 00:17:58 +0800
+Processing by AdsController#index as HTML
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+  [1m[36mAd Load (0.2ms)[0m  [1mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/index.html.erb within layouts/ads (0.4ms)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/ads/8" for 127.0.0.1 at 2013-07-09 00:17:59 +0800
+Processing by AdsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mAd Load (0.2ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1  [["id", "8"]]
+  Rendered ads/show.html.erb within layouts/ads (0.6ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/ads/" for 127.0.0.1 at 2013-07-09 00:18:01 +0800
+Processing by AdsController#index as HTML
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+  [1m[36mAd Load (0.4ms)[0m  [1mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/index.html.erb within layouts/ads (0.4ms)
+Completed 200 OK in 13ms (Views: 9.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ads/1/delete" for 127.0.0.1 at 2013-07-09 00:18:35 +0800
+Processing by AdsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :check_logged_in rendered or redirected
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/ads/1/delete" for 127.0.0.1 at 2013-07-09 00:18:39 +0800
+Processing by AdsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAd Load (0.2ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  DELETE FROM "ads" WHERE "ads"."id" = ?  [["id", 1]]
+  [1m[36m (13.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/ads/
+Completed 302 Found in 50ms (ActiveRecord: 16.8ms)
+
+
+Started GET "/ads/" for 127.0.0.1 at 2013-07-09 00:18:39 +0800
+Processing by AdsController#index as HTML
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+  [1m[35mAd Load (0.3ms)[0m  SELECT "ads".* FROM "ads"
+  Rendered ads/index.html.erb within layouts/ads (0.4ms)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ads/" for 127.0.0.1 at 2013-07-09 00:18:41 +0800
+Processing by AdsController#index as HTML
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /Users/zhanghao/mebay/app/controllers/ads_controller.rb:7)
+  [1m[36mAd Load (0.2ms)[0m  [1mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/index.html.erb within layouts/ads (0.3ms)
+Completed 200 OK in 39ms (Views: 36.5ms | ActiveRecord: 0.2ms)
