@@ -10,7 +10,11 @@ class AdsController < ApplicationController
     params.permit!
     @ad=Ad.new(params[:ad])
     @ad.save
-    redirect_to "/ads/#{@ad.id}"
+    if @ad.save
+        redirect_to "/ads/#{@ad.id}"
+    else
+      render :template=>"ads/new"
+    end
   end
   def new
     @ad = Ad.new
@@ -21,8 +25,11 @@ class AdsController < ApplicationController
   def update
     params.permit!
     @ad = Ad.find(params[:id])
-    @ad.update_attributes(params[:ad])
+    if @ad.update_attributes(params[:ad])
     redirect_to "/ads/#{@ad.id}"
+    else
+      render :template=>"/ads/edit"
+    end
   end
   def destroy
     @ad = Ad.find(params[:id])
